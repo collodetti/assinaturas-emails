@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/style.css">
+  <title>Email Signature</title>
+</head>
+
+<body>
+  <div>
+    <p>1º Export a planilha para .csv</p>
+    <p>
+      2º Acesse o site para converter CSV para JSON {
+      <a href="https://csvjson.com/csv2json" target="_blank" rel="noopener noreferrer">site</a> }
+    </p>
+    <p>
+      3º <input type="file" id="arquivo">
+      <textarea id="preview" hidden></textarea>
+    </p>
+    <p>
+      4º Clique para carregar: <button id="gerar">Gerar</button>
+    </p>
+  </div>
+  <div id="result"></div>
+
+  <button id="download" hidden>Baixar</button>
+  <script src="src/js/index.js"></script>
+</body>
+
+</html>
