@@ -71,7 +71,7 @@ const gerarLinks = () => {
     // Criar o elemento da iteração atual
     // e incluí-lo na div que criamos acima.
     const code = document.createElement('code');
-    code.innerHTML = `<a id="${"btn" + i}" href="#">${obj.nome}</a><br>`;
+    code.innerHTML = `<a id="${i}" class="signature" href="e-mail-signature.html" target="_blank">${obj.nome}</a><br>`;
 
     div.appendChild(code);
   }
@@ -79,4 +79,18 @@ const gerarLinks = () => {
   // Substituir todo o conteúdo do body
   // pela lista de links.
   document.body.innerHTML = div.outerHTML;
+
+  linksActions();
 }
+
+const linksActions = () => {
+  // Receber a string
+  let links = document.querySelectorAll(".signature");
+  links.forEach((link) => {
+    link.addEventListener("click", function () {
+      let pessoa = lista[link.id];
+      // Transformar o objeto em string e salvar em localStorage
+      localStorage.setItem('pessoa', JSON.stringify(pessoa));
+    })
+  });
+};
